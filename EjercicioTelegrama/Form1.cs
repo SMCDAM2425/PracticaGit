@@ -20,18 +20,20 @@ namespace EjercicioTelegrama
         private void btnCalcularPrecio_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-            char tipoTelegrama = ' ';
+            char tipoTelegrama = 'o';
             int numPalabras = 0;
             double coste;
+            string[] palabras;
             //Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
+            palabras = textoTelegrama.Split(' ');
             // telegrama urgente?
             if (chkUrgente.Checked)
             {
                 tipoTelegrama = 'u';
             }
             //Obtengo el número de palabras que forma el telegrama
-            numPalabras = textoTelegrama.Length;
+            numPalabras = palabras.Length + 1;
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
             {
